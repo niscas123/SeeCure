@@ -1,5 +1,7 @@
 {
   "name": "SeeCure",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

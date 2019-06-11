@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import { DatePipe } from '@angular/common';
 import { RotinaProvider } from '../providers/rotina/rotina';
+import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   declarations: [
@@ -41,9 +42,10 @@ import { RotinaProvider } from '../providers/rotina/rotina';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    Camera,
     DatePipe,
     RotinaProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
