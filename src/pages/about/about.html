@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Nova Rotina
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label staked>Nome da Rotina: </ion-label>
+      <ion-input type="text" name="nomeRotina" [(ngModel)]="model.nomeRotina"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label staked>Descrição: </ion-label>
+      <ion-input type="text" name="descricao" [(ngModel)]="model.descricao"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <img src="{{ photo }}" />
+
+  <button ion-button large block (click)="takePicture()">Foto</button>
+
+  <ion-list>
+    <ion-item>
+      <ion-label staked>Data Inicial</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="model.dataInicio"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label staked>Data Final</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="model.dataFinal"></ion-datetime>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label staked>Hora de Iniciar</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="model.dataInicio"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label staked>Hora de Terminar</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="model.dataFinal"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button large block color="danger" (click)="homePage()">Cancelar</button>
+
+  <button ion-button large block color="secondary" (click)="save()">Salvar</button>
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Rotinas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-card *ngFor="let item of rotinas">
+
+      <ion-card-header>
+        <h1>{{ item.rotina.nomeRotina }}</h1>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>{{ item.rotina.descricao }}</p>
+        <p>{{ item.rotina.dataInicio | date: 'dd/MM/yyyy' }} - {{ item.rotina.dataFinal | date: 'dd/MM/yyyy' }}</p>
+        <p>{{ item.rotina.horaInicio }} - {{ item.rotina.horaFinal }}</p>
+      </ion-card-content>
+
+      <ion-row text-center>
+        <ion-col>
+          <button ion-button icon left clear small (click)="editRotina(item)">
+            <ion-icon name="create"></ion-icon>
+            <div>Editar</div>
+          </button>
+        </ion-col>
+
+        <ion-col>
+          <button ion-button icon left clear small (click)="removeRotina(item)">
+            <ion-icon name="trash"></ion-icon>
+            <div>Excluir</div>
+          </button>
+        </ion-col>
+
+      </ion-row>
+
+    </ion-card>
+
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-button color="primary" (click)="addRotina(item)">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>
